@@ -2,30 +2,35 @@ library("data.table")
 
 tidy_set <- function(folder="UCI HAR Dataset") {
 
-    labels <- fread(paste(folder, "features.txt",sep="/"))
+    labels <- read.table(paste(folder, "features.txt",sep="/"), stringsAsFactors=FALSE)
+    columns <- grep("-(std|mean)\\(\\)", labels$V2)
+    
+    tidy_labels <- gsub("\\(|\\)","", gsub("-", ".", labels[columns, 2]))
 
     read_dataset <- function (type) {
         #type may be 'train' or 'test', it is a folder name part of file name
         #load the measurement dataset and assign column lables
-        fileName <- paste(folder, type, paste("X_", type, ".sample.txt", sep=""), sep="/")
-        rowdata <- data.table(read.table(fileName))
+        fileName <- paste(folder, type, paste("X_", type, ".txt", sep=""), sep="/")
+        rowdata <- read.table(fileName)
         
-        tidy <- as.data.table(rowdata[,grep("-(std|mean)\\(\\)", labels$V2)])
+        tidy <- rowdata[,columns]
 
+        setnames(tidy, tidy_labels) 
+        
         #add subject column
-        fileName <- paste(folder, type, paste("subject_", type, ".sample.txt", sep=""), sep="/")
+        fileName <- paste(folder, type, paste("subject_", type, ".txt", sep=""), sep="/")
         subject <- fread(fileName)
         
-        tidy[,subject:=subject$V1]
+        tidy$subject <- subject$V1
         
         #add activity column to the dataset 
         #replacing activity code with its descriptive name
-        fileName <- paste(folder, type, paste("y_", type, ".sample.txt", sep=""), sep="/")
+        fileName <- paste(folder, type, paste("y_", type, ".txt", sep=""), sep="/")
         activity <- fread(fileName)
         
-        tidy[,activity:=activity$V1]
+        tidy$activity <- activity$V1
         
-        tidy
+        as.data.table(tidy)
         
     }
     
@@ -34,7 +39,7 @@ tidy_set <- function(folder="UCI HAR Dataset") {
 
     #convert to data.table, leave only 'std' and 'mean' calculated columns
     # all the columns containing "-std()" or "-mean()" string in the label
-    #data <- as.data.table(rowdata[,grep("-(std|mean)\\(\\)", labels$V2)])
+    print(colnames(data))
     
     
     actlabels <- fread(paste(folder, "activity_labels.txt",sep="/"))
