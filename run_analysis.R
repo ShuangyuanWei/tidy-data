@@ -39,14 +39,15 @@ tidy_set <- function(folder="UCI HAR Dataset") {
 
     #convert to data.table, leave only 'std' and 'mean' calculated columns
     # all the columns containing "-std()" or "-mean()" string in the label
-    print(colnames(data))
-    
+
     
     actlabels <- fread(paste(folder, "activity_labels.txt",sep="/"))
     data[,activity:=factor(data$activity, 
                            levels=actlabels$V1, 
                            labels=actlabels$V2)]
     
-    data
+    #last manipulataion on data to find average of all the columns
+    #grouped by subject and activity fields
+    data[,lapply(.SD,mean),by=c("activity","subject")]
 }
 
