@@ -77,7 +77,7 @@ The complete list of variables of each feature vector is available in `features.
 
 
 ##Code book
-===========
+
 All variable values are keeping original unit vaules, the following variables are present in the data
 
  1 - activity - type of activity, `WALKING,WALKING_UPSTAIRS,WALKING_DOWNSTAIRS,SITTING,STANDING,LAYING`                 
