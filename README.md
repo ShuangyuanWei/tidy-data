@@ -16,10 +16,7 @@ as it is required by course project requirements:
 
 ## Script
 #### dependencies
-The script will require `data.table` package which may be installed by 
-```R
-install.packages("data.table")
-```
+The script will require `data.table` and `reshape2` packages
 
 #### running
 If downloaded data had been unzipped into script's directory, it will create sub-folder named `UCI HAR Dataset` where the script will read data from.
@@ -38,7 +35,7 @@ data <- tidy_set('/tmp/data/UCI HAR Dataset')
 ```
 
 #### output
-Returned object is `data.table` contains `180` rows and `68` columns as described  in details in `CodeBook.md`
+Returned object is `data.table` contains `11880` rows and `4` columns described in details in `CodeBook.md`
 Resulting data could be saved into `tidy_data.txt` file by the following command
 ```R
 write.table(data, file="tidy_data.txt", row.names=FALSE)
