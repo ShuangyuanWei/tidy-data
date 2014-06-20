@@ -1,5 +1,5 @@
 ## Study design
-===============
+
 ### data origin
 The data is recombined and cleand up data originally available from data set downloaded from
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
@@ -14,7 +14,6 @@ Average values (mean) of all the variables was then calculated grouping data by 
 Resulting data set has one line per **subject/activity** combination with 66 average parameters caluclated per observation
 
 ##Feature Selection 
-===================
 
 (this section has been copied *as is* from original `features_info.txt`)
 
