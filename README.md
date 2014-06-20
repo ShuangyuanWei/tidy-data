@@ -43,4 +43,3 @@ Resulting data could be saved into `tidy_data.txt` file by the following command
 ```R
 write.table(data, file="tidy_data.txt", row.names=FALSE)
 ```
-
