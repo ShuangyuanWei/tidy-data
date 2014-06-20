@@ -38,10 +38,9 @@ data <- tidy_set('/tmp/data/UCI HAR Dataset')
 ```
 
 #### output
-Returned object is `data.table` contains `180` rows and `68` columns.
-Resulting data saved into tidy_data.txt file by 
+Returned object is `data.table` contains `180` rows and `68` columns as described  in details in `CodeBook.md`
+Resulting data could be saved into `tidy_data.txt` file by the following command
 ```
 write.table(data, file="tidy_data.txt", row.names=FALSE)
 ```
 
-variable names and values are described in details in `CodeBook.md`
