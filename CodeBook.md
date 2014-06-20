@@ -19,8 +19,11 @@ Resulting data set has one line per **subject/activity/feature** combination
 All *feature* values are keeping their original units, the following variables are present in the data
 
 1 - activity - type of activity, `WALKING,WALKING_UPSTAIRS,WALKING_DOWNSTAIRS,SITTING,STANDING,LAYING`                 
+
 2 - subject - code of the person who was doing the activity                  
+
 3 - feature - original *feature* as presented in source data (see section **Feature selection** below)
+
 4 - average - average value of named feature for given **subject/activity**
 
 ##Feature Selection 
