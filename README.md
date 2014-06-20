@@ -27,6 +27,7 @@ Main script to run is `run_analysis.R`. It expects folder name where raw data ha
 
 Script could be run by issuing
 ```R
+source('./run_analysis.R')
 data <- tidy_set()
 ```
 
