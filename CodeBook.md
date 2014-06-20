@@ -1,5 +1,5 @@
 ## Study design
-===============
+
 ### data origin
 The data is recombined and cleand up data originally available from data set downloaded from
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
@@ -15,16 +15,15 @@ Resulting data set has one line per **subject/activity/feature** combination
 
 
 ##Code book
-===========
-All variable values are keeping original unit vaules, the following variables are present in the data
+
+All *feature* values are keeping their original units, the following variables are present in the data
 
 1 - activity - type of activity, `WALKING,WALKING_UPSTAIRS,WALKING_DOWNSTAIRS,SITTING,STANDING,LAYING`                 
 2 - subject - code of the person who was doing the activity                  
 3 - feature - original *feature* as presented in source data (see section **Feature selection** below)
-4 - average - average value of named feature for given *subject/activity*
+4 - average - average value of named feature for given **subject/activity**
 
 ##Feature Selection 
-===================
 
 (this section has been copied *as is* from original `features_info.txt`)
 
@@ -85,4 +84,3 @@ tBodyGyroMean
 tBodyGyroJerkMean
 ```
 The complete list of variables of each feature vector is available in `features.txt`
-
