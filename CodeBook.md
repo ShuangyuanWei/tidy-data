@@ -1,22 +1,22 @@
 ## Study design
 
 ### data origin
-The data is recombined and cleand up data originally available from data set downloaded from
+The data is a recombination and summary of dataset originally available to download from
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 ### merging and filtering
-Original dataset information is described in details in the codebook `features_info.txt` included with original `.zip` file. Final dataset combines both **train** and **test** data but only variables representing **mean** and **standard deviation** measurements: column names were filtered so that only ones having strings `-mean()` or `-std()` were remaining. 
+Original dataset information is described in details in its codebook `features_info.txt` included within `.zip` archive. Final dataset combines both **train** and **test** data but only variables representing **mean** and **standard deviation** measurements: column names were filtered so that only ones containing strings `-mean()` or `-std()` were included. 
 
 Resulting dataset was augmented with **activity** (in verbal form) and **subject** values
 
 ### final calculation
-Average values (mean) of all the variables was then calculated grouping data by **activity** and **subject** values. 
+Average values (mean) of all the variables were then calculated grouping data by **activity** and **subject**. 
 Resulting data set has one line per **subject/activity/feature** combination 
 
 
 ##Code book
 
-All *feature* values are keeping their original units, the following variables are present in the data
+The following variables are present in the data
 
 1 - activity - type of activity, `WALKING,WALKING_UPSTAIRS,WALKING_DOWNSTAIRS,SITTING,STANDING,LAYING`                 
 
@@ -25,6 +25,8 @@ All *feature* values are keeping their original units, the following variables a
 3 - feature - original *feature* as presented in source data (see section **Feature selection** below)
 
 4 - average - average value of named feature for given **subject/activity**
+
+All *feature* measurements keep their original units as described below.
 
 ##Feature Selection 
 
