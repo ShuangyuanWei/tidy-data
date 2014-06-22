@@ -18,9 +18,9 @@ as it is required by course project requirements:
 #### dependencies
 The script will require `data.table` and `reshape2` packages
 
-#### running
-If downloaded data had been unzipped into script's directory, it will create sub-folder named `UCI HAR Dataset` where the script will read data from.
-Main script to run is `run_analysis.R`. It expects folder name where raw data had been unpacked as a parameter. If input parameter is omitted, the script will try to look for `UCI HAR Dataset` folder in its source directory.
+#### excuting
+Unzip downloaded data archive into script's directory, there should be new sub-folder named `UCI HAR Dataset` where the script will read the data from.
+Main script to run is `run_analysis.R`. It expects a parameter with name of the folder where tthe raw data had been unpacked to. If input parameter is omitted, the script will try to look for `UCI HAR Dataset` folder in its source directory.
 
 Script could be run by issuing
 ```R
@@ -35,7 +35,7 @@ data <- tidy_set('/tmp/data/UCI HAR Dataset')
 ```
 
 #### output
-Returned object is `data.table` contains `11880` rows and `4` columns described in details in `CodeBook.md`
+Returned object is of `data.table` class, it contains `11880` rows and `4` columns described in details in `CodeBook.md`
 Resulting data could be saved into `tidy_data.txt` file by the following command
 ```R
 write.table(data, file="tidy_data.txt", row.names=FALSE)
