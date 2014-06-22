@@ -18,7 +18,7 @@ as it is required by course project requirements:
 #### dependencies
 The script will require `data.table` and `reshape2` packages
 
-#### excuting
+#### executing
 Unzip downloaded data archive into script's directory, there should be new sub-folder named `UCI HAR Dataset` where the script will read the data from.
 Main script to run is `run_analysis.R`. It expects a parameter with name of the folder where tthe raw data had been unpacked to. If input parameter is omitted, the script will try to look for `UCI HAR Dataset` folder in its source directory.
 
